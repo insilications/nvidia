@@ -1,0 +1,22 @@
+CURRDIR:=$(shell pwd)
+#NVIDIA_VERSION:=$(shell cat /opt/nvidia/lib64/libGL.la | grep -oP '(?<=revision=)\d+(\.\d+)+')
+NVIDIA_VERSION:=$(shell modinfo /usr/lib/modules/*/kernel/drivers/video/nvidia.ko | grep -oP '(?<=version:\s\s\s\s\s\s\s\s)\d+(\.\d+)+')
+NEWURL = $(eval export NEWURL:=file://$(CURRDIR)/nvidia-$(NVIDIA_VERSION).tar.gz)
+
+download:
+	-@rm nvidia*\.tar.gz; \
+	@rm CMakeLists.txt; \
+	curl --location https://raw.githubusercontent.com/insilications/nvidia-clr/master/CMakeLists.txt -o CMakeLists.txt; \
+	tar --exclude=share/doc --exclude=share/man --create --verbose --add-file=CMakeLists.txt --gzip --file=nvidia-$(NVIDIA_VERSION).tar.gz /opt/nvidia/;
+
+preautospec-checks: download
+	$(NEWURL)
+	-@rm CMakeLists.txt
+
+preautospecnew-checks: download
+	$(NEWURL)
+	-@rm CMakeLists.txt
+
+prebuild-checks: download
+	$(NEWURL)
+	-@rm CMakeLists.txt
