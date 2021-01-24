@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : nvidia
 Version  : 460.32.03
-Release  : 7
+Release  : 8
 URL      : file:///insilications/build/clearlinux/packages/nvidia/nvidia-460.32.03.tar.gz
 Source0  : file:///insilications/build/clearlinux/packages/nvidia/nvidia-460.32.03.tar.gz
 Summary  : No detailed summary available
@@ -109,7 +109,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1611482394
+export SOURCE_DATE_EPOCH=1611482912
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -127,7 +127,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1611482394
+export SOURCE_DATE_EPOCH=1611482912
 rm -rf %{buildroot}
 pushd clr-build
 %make_install
