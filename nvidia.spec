@@ -4,10 +4,10 @@
 #
 %define keepstatic 1
 Name     : nvidia
-Version  : 460.32.03
-Release  : 8
-URL      : file:///insilications/build/clearlinux/packages/nvidia/nvidia-460.32.03.tar.gz
-Source0  : file:///insilications/build/clearlinux/packages/nvidia/nvidia-460.32.03.tar.gz
+Version  : 460.56
+Release  : 9
+URL      : file:///aot/build/clearlinux/packages/nvidia/nvidia-460.56.tar.gz
+Source0  : file:///aot/build/clearlinux/packages/nvidia/nvidia-460.56.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -100,8 +100,8 @@ lib32 components for the nvidia package.
 
 
 %prep
-%setup -q -c -n nvidia-460.32.03.tar
-cd %{_builddir}/nvidia-460.32.03.tar
+%setup -q -c -n nvidia-460.56.tar
+cd %{_builddir}/nvidia-460.56.tar
 
 %build
 unset http_proxy
@@ -109,7 +109,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1611482912
+export SOURCE_DATE_EPOCH=1615758251
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -127,7 +127,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1611482912
+export SOURCE_DATE_EPOCH=1615758251
 rm -rf %{buildroot}
 pushd clr-build
 %make_install
@@ -200,120 +200,120 @@ popd
 /usr/nvidia/lib64/libEGL.so.1
 /usr/nvidia/lib64/libEGL.so.1.1.0
 /usr/nvidia/lib64/libEGL_nvidia.so.0
-/usr/nvidia/lib64/libEGL_nvidia.so.460.32.03
+/usr/nvidia/lib64/libEGL_nvidia.so.460.56
 /usr/nvidia/lib64/libGL.so.1
 /usr/nvidia/lib64/libGL.so.1.7.0
 /usr/nvidia/lib64/libGLESv1_CM.so.1
 /usr/nvidia/lib64/libGLESv1_CM.so.1.2.0
 /usr/nvidia/lib64/libGLESv1_CM_nvidia.so.1
-/usr/nvidia/lib64/libGLESv1_CM_nvidia.so.460.32.03
+/usr/nvidia/lib64/libGLESv1_CM_nvidia.so.460.56
 /usr/nvidia/lib64/libGLESv2.so.2
 /usr/nvidia/lib64/libGLESv2.so.2.1.0
 /usr/nvidia/lib64/libGLESv2_nvidia.so.2
-/usr/nvidia/lib64/libGLESv2_nvidia.so.460.32.03
+/usr/nvidia/lib64/libGLESv2_nvidia.so.460.56
 /usr/nvidia/lib64/libGLX.so.0
 /usr/nvidia/lib64/libGLX_indirect.so.0
 /usr/nvidia/lib64/libGLX_nvidia.so.0
-/usr/nvidia/lib64/libGLX_nvidia.so.460.32.03
+/usr/nvidia/lib64/libGLX_nvidia.so.460.56
 /usr/nvidia/lib64/libGLdispatch.so.0
 /usr/nvidia/lib64/libOpenCL.so.1
 /usr/nvidia/lib64/libOpenCL.so.1.0
 /usr/nvidia/lib64/libOpenCL.so.1.0.0
 /usr/nvidia/lib64/libOpenGL.so.0
 /usr/nvidia/lib64/libcuda.so.1
-/usr/nvidia/lib64/libcuda.so.460.32.03
+/usr/nvidia/lib64/libcuda.so.460.56
 /usr/nvidia/lib64/libnvcuvid.so.1
-/usr/nvidia/lib64/libnvcuvid.so.460.32.03
+/usr/nvidia/lib64/libnvcuvid.so.460.56
 /usr/nvidia/lib64/libnvidia-allocator.so.1
-/usr/nvidia/lib64/libnvidia-allocator.so.460.32.03
-/usr/nvidia/lib64/libnvidia-cbl.so.460.32.03
+/usr/nvidia/lib64/libnvidia-allocator.so.460.56
+/usr/nvidia/lib64/libnvidia-cbl.so.460.56
 /usr/nvidia/lib64/libnvidia-cfg.so.1
-/usr/nvidia/lib64/libnvidia-cfg.so.460.32.03
-/usr/nvidia/lib64/libnvidia-compiler.so.460.32.03
+/usr/nvidia/lib64/libnvidia-cfg.so.460.56
+/usr/nvidia/lib64/libnvidia-compiler.so.460.56
 /usr/nvidia/lib64/libnvidia-egl-wayland.so.1
 /usr/nvidia/lib64/libnvidia-egl-wayland.so.1.1.5
-/usr/nvidia/lib64/libnvidia-eglcore.so.460.32.03
+/usr/nvidia/lib64/libnvidia-eglcore.so.460.56
 /usr/nvidia/lib64/libnvidia-encode.so.1
-/usr/nvidia/lib64/libnvidia-encode.so.460.32.03
+/usr/nvidia/lib64/libnvidia-encode.so.460.56
 /usr/nvidia/lib64/libnvidia-fbc.so.1
-/usr/nvidia/lib64/libnvidia-fbc.so.460.32.03
-/usr/nvidia/lib64/libnvidia-glcore.so.460.32.03
-/usr/nvidia/lib64/libnvidia-glsi.so.460.32.03
-/usr/nvidia/lib64/libnvidia-glvkspirv.so.460.32.03
-/usr/nvidia/lib64/libnvidia-gtk2.so.460.32.03
-/usr/nvidia/lib64/libnvidia-gtk3.so.460.32.03
+/usr/nvidia/lib64/libnvidia-fbc.so.460.56
+/usr/nvidia/lib64/libnvidia-glcore.so.460.56
+/usr/nvidia/lib64/libnvidia-glsi.so.460.56
+/usr/nvidia/lib64/libnvidia-glvkspirv.so.460.56
+/usr/nvidia/lib64/libnvidia-gtk2.so.460.56
+/usr/nvidia/lib64/libnvidia-gtk3.so.460.56
 /usr/nvidia/lib64/libnvidia-ifr.so.1
-/usr/nvidia/lib64/libnvidia-ifr.so.460.32.03
+/usr/nvidia/lib64/libnvidia-ifr.so.460.56
 /usr/nvidia/lib64/libnvidia-ml.so.1
-/usr/nvidia/lib64/libnvidia-ml.so.460.32.03
+/usr/nvidia/lib64/libnvidia-ml.so.460.56
 /usr/nvidia/lib64/libnvidia-ngx.so.1
-/usr/nvidia/lib64/libnvidia-ngx.so.460.32.03
+/usr/nvidia/lib64/libnvidia-ngx.so.460.56
 /usr/nvidia/lib64/libnvidia-opencl.so.1
-/usr/nvidia/lib64/libnvidia-opencl.so.460.32.03
+/usr/nvidia/lib64/libnvidia-opencl.so.460.56
 /usr/nvidia/lib64/libnvidia-opticalflow.so.1
-/usr/nvidia/lib64/libnvidia-opticalflow.so.460.32.03
+/usr/nvidia/lib64/libnvidia-opticalflow.so.460.56
 /usr/nvidia/lib64/libnvidia-ptxjitcompiler.so.1
-/usr/nvidia/lib64/libnvidia-ptxjitcompiler.so.460.32.03
-/usr/nvidia/lib64/libnvidia-rtcore.so.460.32.03
-/usr/nvidia/lib64/libnvidia-tls.so.460.32.03
+/usr/nvidia/lib64/libnvidia-ptxjitcompiler.so.460.56
+/usr/nvidia/lib64/libnvidia-rtcore.so.460.56
+/usr/nvidia/lib64/libnvidia-tls.so.460.56
 /usr/nvidia/lib64/libnvoptix.so.1
-/usr/nvidia/lib64/libnvoptix.so.460.32.03
+/usr/nvidia/lib64/libnvoptix.so.460.56
 /usr/nvidia/lib64/vdpau/libvdpau_nvidia.so.1
-/usr/nvidia/lib64/vdpau/libvdpau_nvidia.so.460.32.03
+/usr/nvidia/lib64/vdpau/libvdpau_nvidia.so.460.56
 /usr/nvidia/lib64/xorg/modules/drivers/nvidia_drv.so
 /usr/nvidia/lib64/xorg/modules/extensions/libglxserver_nvidia.so
-/usr/nvidia/lib64/xorg/modules/extensions/libglxserver_nvidia.so.460.32.03
+/usr/nvidia/lib64/xorg/modules/extensions/libglxserver_nvidia.so.460.56
 
 %files lib32
 %defattr(-,root,root,-)
 /usr/nvidia/lib32/libEGL.so.1
 /usr/nvidia/lib32/libEGL.so.1.1.0
 /usr/nvidia/lib32/libEGL_nvidia.so.0
-/usr/nvidia/lib32/libEGL_nvidia.so.460.32.03
+/usr/nvidia/lib32/libEGL_nvidia.so.460.56
 /usr/nvidia/lib32/libGL.so.1
 /usr/nvidia/lib32/libGL.so.1.7.0
 /usr/nvidia/lib32/libGLESv1_CM.so.1
 /usr/nvidia/lib32/libGLESv1_CM.so.1.2.0
 /usr/nvidia/lib32/libGLESv1_CM_nvidia.so.1
-/usr/nvidia/lib32/libGLESv1_CM_nvidia.so.460.32.03
+/usr/nvidia/lib32/libGLESv1_CM_nvidia.so.460.56
 /usr/nvidia/lib32/libGLESv2.so.2
 /usr/nvidia/lib32/libGLESv2.so.2.1.0
 /usr/nvidia/lib32/libGLESv2_nvidia.so.2
-/usr/nvidia/lib32/libGLESv2_nvidia.so.460.32.03
+/usr/nvidia/lib32/libGLESv2_nvidia.so.460.56
 /usr/nvidia/lib32/libGLX.so.0
 /usr/nvidia/lib32/libGLX_indirect.so.0
 /usr/nvidia/lib32/libGLX_nvidia.so.0
-/usr/nvidia/lib32/libGLX_nvidia.so.460.32.03
+/usr/nvidia/lib32/libGLX_nvidia.so.460.56
 /usr/nvidia/lib32/libGLdispatch.so.0
 /usr/nvidia/lib32/libOpenCL.so.1
 /usr/nvidia/lib32/libOpenCL.so.1.0
 /usr/nvidia/lib32/libOpenCL.so.1.0.0
 /usr/nvidia/lib32/libOpenGL.so.0
 /usr/nvidia/lib32/libcuda.so.1
-/usr/nvidia/lib32/libcuda.so.460.32.03
+/usr/nvidia/lib32/libcuda.so.460.56
 /usr/nvidia/lib32/libnvcuvid.so.1
-/usr/nvidia/lib32/libnvcuvid.so.460.32.03
+/usr/nvidia/lib32/libnvcuvid.so.460.56
 /usr/nvidia/lib32/libnvidia-allocator.so.1
-/usr/nvidia/lib32/libnvidia-allocator.so.460.32.03
-/usr/nvidia/lib32/libnvidia-compiler.so.460.32.03
-/usr/nvidia/lib32/libnvidia-eglcore.so.460.32.03
+/usr/nvidia/lib32/libnvidia-allocator.so.460.56
+/usr/nvidia/lib32/libnvidia-compiler.so.460.56
+/usr/nvidia/lib32/libnvidia-eglcore.so.460.56
 /usr/nvidia/lib32/libnvidia-encode.so.1
-/usr/nvidia/lib32/libnvidia-encode.so.460.32.03
+/usr/nvidia/lib32/libnvidia-encode.so.460.56
 /usr/nvidia/lib32/libnvidia-fbc.so.1
-/usr/nvidia/lib32/libnvidia-fbc.so.460.32.03
-/usr/nvidia/lib32/libnvidia-glcore.so.460.32.03
-/usr/nvidia/lib32/libnvidia-glsi.so.460.32.03
-/usr/nvidia/lib32/libnvidia-glvkspirv.so.460.32.03
+/usr/nvidia/lib32/libnvidia-fbc.so.460.56
+/usr/nvidia/lib32/libnvidia-glcore.so.460.56
+/usr/nvidia/lib32/libnvidia-glsi.so.460.56
+/usr/nvidia/lib32/libnvidia-glvkspirv.so.460.56
 /usr/nvidia/lib32/libnvidia-ifr.so.1
-/usr/nvidia/lib32/libnvidia-ifr.so.460.32.03
+/usr/nvidia/lib32/libnvidia-ifr.so.460.56
 /usr/nvidia/lib32/libnvidia-ml.so.1
-/usr/nvidia/lib32/libnvidia-ml.so.460.32.03
+/usr/nvidia/lib32/libnvidia-ml.so.460.56
 /usr/nvidia/lib32/libnvidia-opencl.so.1
-/usr/nvidia/lib32/libnvidia-opencl.so.460.32.03
+/usr/nvidia/lib32/libnvidia-opencl.so.460.56
 /usr/nvidia/lib32/libnvidia-opticalflow.so.1
-/usr/nvidia/lib32/libnvidia-opticalflow.so.460.32.03
+/usr/nvidia/lib32/libnvidia-opticalflow.so.460.56
 /usr/nvidia/lib32/libnvidia-ptxjitcompiler.so.1
-/usr/nvidia/lib32/libnvidia-ptxjitcompiler.so.460.32.03
-/usr/nvidia/lib32/libnvidia-tls.so.460.32.03
+/usr/nvidia/lib32/libnvidia-ptxjitcompiler.so.460.56
+/usr/nvidia/lib32/libnvidia-tls.so.460.56
 /usr/nvidia/lib32/vdpau/libvdpau_nvidia.so.1
-/usr/nvidia/lib32/vdpau/libvdpau_nvidia.so.460.32.03
+/usr/nvidia/lib32/vdpau/libvdpau_nvidia.so.460.56
